@@ -1,53 +1,72 @@
 package com.carnival.rental.presentation;
 
+import com.carnival.rental.entity.ProductType;
 import com.carnival.rental.entity.User;
-import com.carnival.rental.repository.UserRepository;
+import com.carnival.rental.service.ProductTypeService;
+import com.carnival.rental.service.UserService;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import net.datafaker.Faker;
 
 public class Main {
 
   public static void main(String[] args) {
-    System.out.println(">>> Розпочинаємо тестування системи...");
+    System.out.println("========== ТЕСТУВАННЯ БІЗНЕС-ЛОГІКИ (SERVICE LAYER) ==========");
 
-    // 1. Ініціалізація репозиторію та генератора даних (Українська локаль)
-    UserRepository userRepository = new UserRepository();
+    // 1. Ініціалізація сервісів
+    UserService userService = new UserService();
+    ProductTypeService productService = new ProductTypeService();
     Faker faker = new Faker(new Locale("uk"));
 
-    // 2. Генерація фейкових користувачів
-    System.out.println("Генерація випадкових користувачів...");
-    for (int i = 0; i < 5; i++) {
-      try {
-        // Використовуємо реалістичні імена, транслітеруючи в логін, або просто username
-        String username = faker.name().username();
-        String email = faker.internet().emailAddress();
-        String password = faker.internet().password();
+    // --- БЛОК 1: КОРИСТУВАЧІ ---
+    System.out.println("\n>>> 1. СТВОРЕННЯ КОРИСТУВАЧА (Create)");
+    String newLogin = faker.name().username();
+    userService.createUser(newLogin, "test.email@example.com", "12345", "CLIENT");
 
-        // Випадково призначаємо роль
-        String role = (i % 2 == 0) ? "CLIENT" : "ADMIN";
+    // Знаходимо його, щоб отримати ID
+    User createdUser = userService.searchUsers(newLogin).get(0);
+    UUID userId = createdUser.getId();
 
-        User user = new User(username, email, password, role);
-        userRepository.save(user);
-        System.out.println(" + Створено: " + username);
+    System.out.println(">>> 2. РЕДАГУВАННЯ (Update)");
+    // Змінюємо роль на ADMIN
+    userService.updateUser(userId, "new.email@example.com", "ADMIN");
 
-      } catch (Exception e) {
-        System.out.println("Помилка генерації користувача: " + e.getMessage());
-      }
+    System.out.println(">>> 3. ПОШУК (Search)");
+    List<User> searchResult = userService.searchUsers(newLogin);
+    searchResult.forEach(u -> System.out.println("Знайдено: " + u));
+
+    // --- БЛОК 2: ТОВАРИ ---
+    System.out.println("\n>>> 4. СТВОРЕННЯ ТОВАРІВ (Create Product)");
+    // Генеруємо 3 випадкові костюми
+    for (int i = 0; i < 3; i++) {
+      String costumeName = "Костюм " + faker.superhero().name();
+      productService.createProduct(
+          costumeName,
+          "Розмір " + faker.options().option("S", "M", "L"),
+          "M",
+          faker.number().numberBetween(100, 1000)
+      );
     }
 
-    // 3. Зчитування даних з файлу
-    System.out.println("\n>>> Зчитування з файлу (users.json):");
-    List<User> usersFromFile = userRepository.findAll();
+    System.out.println(">>> 5. ОТРИМАННЯ ВСІХ ТОВАРІВ (Read All)");
+    List<ProductType> allProducts = productService.getAllProducts();
+    System.out.println("Всього товарів у базі: " + allProducts.size());
 
-    if (usersFromFile.isEmpty()) {
-      System.out.println("Файл порожній або не знайдений!");
-    } else {
-      for (User u : usersFromFile) {
-        System.out.println(u);
-      }
+    if (!allProducts.isEmpty()) {
+      ProductType firstProduct = allProducts.get(0);
+      System.out.println("Приклад товару: " + firstProduct);
+
+      System.out.println(">>> 6. ОНОВЛЕННЯ ЦІНИ (Update)");
+      productService.updateProduct(firstProduct.getId(), firstProduct.getName(),
+          "Опис змінено адміністратором", 9999.0);
+
+      System.out.println(">>> 7. ВИДАЛЕННЯ (Delete)");
+      // Видаляємо останній доданий товар для тесту
+      ProductType lastProduct = allProducts.get(allProducts.size() - 1);
+      productService.deleteProduct(lastProduct.getId());
     }
 
-    System.out.println("\nВсього користувачів у системі: " + usersFromFile.size());
+    System.out.println("\n========== ТЕСТУВАННЯ ЗАВЕРШЕНО ==========");
   }
 }

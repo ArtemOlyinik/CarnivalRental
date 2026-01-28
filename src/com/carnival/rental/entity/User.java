@@ -5,10 +5,10 @@ public class User extends BaseEntity {
   private String username;
   private String email;
   private String password;
-  private String role; // "ADMIN" або "CLIENT"
+  private String role;
 
   public User(String username, String email, String password, String role) {
-    // Валідація вхідних даних
+    // Валідація (та сама, що була)
     if (username == null || username.isBlank()) {
       throw new IllegalArgumentException("Username cannot be empty");
     }
@@ -38,13 +38,25 @@ public class User extends BaseEntity {
     return role;
   }
 
-  // Сеттери (за потреби теж можна додати валідацію)
+  //СЕТТЕРИ
+  public void setEmail(String email) {
+    if (email == null || !email.contains("@")) {
+      throw new IllegalArgumentException("Invalid email format");
+    }
+    this.email = email;
+  }
+
   public void setRole(String role) {
+    if (role == null || role.isBlank()) {
+      throw new IllegalArgumentException("Role cannot be empty");
+    }
     this.role = role;
   }
+  // ----------------------------------
 
   @Override
   public String toString() {
-    return "User{" + super.toString() + ", username='" + username + "', role='" + role + "'}";
+    return "User{" + super.toString() + ", username='" + username + "', email='" + email
+        + "', role='" + role + "'}";
   }
 }

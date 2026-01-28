@@ -418,5 +418,12 @@
     "password": "273752b3ri4",
     "role": "CLIENT",
     "id": "f6dc61e0-66f3-4026-8474-16475ae69900"
+  },
+  {
+    "username": "мстислав.коман",
+    "email": "test.email@example.com",
+    "password": "12345",
+    "role": "ADMIN",
+    "id": "f4669f98-ec19-45d7-a895-13a453a89f4a"
   }
 ]
