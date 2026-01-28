@@ -1,0 +1,12 @@
+[
+  {
+    "userId": "bec80629-6ee3-4fdc-8116-9abf9947e27a",
+    "productId": "0a66449c-003c-4f04-9dc5-3be2a87c3211",
+    "productName": "Спайдермен",
+    "startDate": "2026-05-01",
+    "endDate": "2026-05-03",
+    "totalPrice": 200.0,
+    "active": true,
+    "id": "9e6a4a73-b1ba-4ae6-9c1c-d4f4a1e3ff82"
+  }
+]

@@ -2,6 +2,7 @@ package com.carnival.rental.service;
 
 import com.carnival.rental.dto.ProductDto;
 import com.carnival.rental.entity.ProductType;
+import com.carnival.rental.presentation.util.ConsoleColors;
 import com.carnival.rental.repository.ProductTypeRepository;
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +20,7 @@ public class ProductTypeService {
   public void createProduct(ProductDto dto) {
     ProductType product = new ProductType(dto.name(), dto.description(), dto.size(), dto.price());
     repository.save(product);
-    System.out.println("SERVICE: Товар створено -> " + dto.name());
+    ConsoleColors.printSuccess("Товар успішно додано до каталогу: " + dto.name());
   }
 
   public List<ProductType> getAllProducts() {
@@ -40,15 +41,15 @@ public class ProductTypeService {
       product.setPricePerDay(dto.price());
 
       repository.save(product);
-      System.out.println("SERVICE: Товар оновлено.");
+      ConsoleColors.printSuccess("Дані про товар оновлено.");
     } else {
-      System.out.println("SERVICE Помилка: Товар не знайдено.");
+      ConsoleColors.printError("Помилка: Товар з таким ID не знайдено.");
     }
   }
 
   public void deleteProduct(UUID id) {
     repository.delete(id);
-    System.out.println("SERVICE: Товар видалено.");
+    ConsoleColors.printSuccess("Товар успішно видалено з каталогу.");
   }
 
   public List<ProductType> searchProducts(String query) {

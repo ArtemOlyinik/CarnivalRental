@@ -15,16 +15,20 @@ import java.util.UUID;
 
 public abstract class JsonRepository<T extends BaseEntity> implements Repository<T> {
 
-  // Gson налаштований на красивий вивід (PrettyPrinting)
-  protected final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+  protected final Gson gson; // Забираємо final і ініціалізацію тут
   protected final Path filePath;
   protected final Type type;
 
-  // Конструктор приймає назву файлу (наприклад "users.json") і тип даних
   public JsonRepository(String fileName, Type type) {
-    this.filePath = Paths.get("data", fileName); // Файли будуть у папці data/
+    this.filePath = Paths.get("data", fileName);
     this.type = type;
+    this.gson = createGson(); // Викликаємо метод створення
     createDataDirectory();
+  }
+
+  // Метод, який можна перевизначити в дочірніх класах
+  protected Gson createGson() {
+    return new GsonBuilder().setPrettyPrinting().create();
   }
 
   private void createDataDirectory() {

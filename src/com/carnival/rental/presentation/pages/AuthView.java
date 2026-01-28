@@ -35,13 +35,9 @@ public class AuthView {
         switch (choice) {
           case "1" -> {
             UserLoginDto loginDto = userForm.login();
-            return authService.login(loginDto); // Повертаємо юзера, якщо успішно
+            return authService.login(loginDto);
           }
-          case "2" -> {
-            UserRegisterDto registerDto = userForm.register();
-            authService.register(registerDto);
-            // Після реєстрації не входимо автоматично, хай залогіниться
-          }
+          case "2" -> handleRegistration(); // Винесли логіку в окремий метод для чистоти
           case "0" -> {
             System.out.println("До побачення!");
             System.exit(0);
@@ -51,6 +47,47 @@ public class AuthView {
       } catch (Exception e) {
         ConsoleColors.printError("Помилка: " + e.getMessage());
       }
+    }
+  }
+
+  // Логіка реєстрації з 3 спробами
+  private void handleRegistration() {
+    // 1. Зчитуємо дані
+    UserRegisterDto registerDto = userForm.register();
+
+    // 2. Відправляємо код
+    try {
+      authService.startRegistration(registerDto);
+    } catch (Exception e) {
+      ConsoleColors.printError(e.getMessage());
+      return; // Якщо помилка тут (наприклад, email зайнятий), то виходимо одразу
+    }
+
+    // 3. Цикл підтвердження (3 спроби)
+    int attempts = 3;
+    boolean success = false;
+
+    while (attempts > 0) {
+      System.out.print(
+          ConsoleColors.YELLOW + "Введіть код з Email (залишилось спроб: " + attempts + "): "
+              + ConsoleColors.RESET);
+      String code = scanner.nextLine();
+
+      try {
+        authService.confirmRegistration(registerDto.email(), code);
+        success = true;
+        break; // Успіх! Виходимо з циклу
+      } catch (Exception e) {
+        attempts--;
+        ConsoleColors.printError(e.getMessage()); // "Невірний код"
+        if (attempts > 0) {
+          System.out.println("Спробуйте ще раз.");
+        }
+      }
+    }
+
+    if (!success) {
+      ConsoleColors.printError("Вичерпано ліміт спроб. Реєстрацію скасовано.");
     }
   }
 }

@@ -1,23 +1,72 @@
 [
   {
-    "name": "Костюм The Wiz Kid",
-    "description": "Розмір S",
+    "name": "Костюм Людина-Павук",
+    "description": "Класичний костюм Marvel, спандекс",
     "size": "M",
-    "pricePerDay": 705.0,
-    "id": "0d615c19-c18e-48a8-a0ac-100f34e57484"
+    "pricePerDay": 250.0,
+    "id": "051b2c12-a591-4efc-9c14-1afd4432f282"
   },
   {
-    "name": "Костюм Darkstar",
-    "description": "Опис змінено адміністратором",
-    "size": "M",
-    "pricePerDay": 9999.0,
-    "id": "0ba18677-8e40-4b10-b932-36b325253c49"
+    "name": "Плаття Ельзи (Frozen)",
+    "description": "Блакитне плаття зі шлейфом",
+    "size": "S",
+    "pricePerDay": 300.0,
+    "id": "56577a23-b07c-4d72-893f-6491e61f18df"
   },
   {
-    "name": "Маска Бетмена",
-    "description": "Пластикова маска",
+    "name": "Мантія Гаррі Поттера",
+    "description": "Грифіндор, з шарфом та емблемою",
+    "size": "L",
+    "pricePerDay": 200.0,
+    "id": "5ad74280-c460-4ce0-af85-de93c4d32cf6"
+  },
+  {
+    "name": "Костюм Пірата",
+    "description": "Капелюх, камзол, пов\u0027язка на око",
+    "size": "XL",
+    "pricePerDay": 220.0,
+    "id": "32aa8e33-f361-495e-a716-bc608e537e32"
+  },
+  {
+    "name": "Костюм Динозавра (Надувний)",
+    "description": "T-Rex, працює від батарейок",
     "size": "Universal",
+    "pricePerDay": 400.0,
+    "id": "4785751b-90c3-4cd4-b598-0c8593c6ae62"
+  },
+  {
+    "name": "Шолом Дарта Вейдера",
+    "description": "Реквізит, пластик, зі звуком (Star Wars)",
+    "size": "OneSize",
     "pricePerDay": 150.0,
-    "id": "aa8575d1-f55a-4bf6-9758-1b5f4cfc5c86"
+    "id": "104edae4-0770-4643-aad3-9563498c18dd"
+  },
+  {
+    "name": "Молот Тора (Мйольнір)",
+    "description": "Важкий реквізит, реалістичний пластик",
+    "size": "OneSize",
+    "pricePerDay": 120.0,
+    "id": "45b80d31-7248-449b-b47f-a3b7c7309fb6"
+  },
+  {
+    "name": "Щит Капітана Америка",
+    "description": "Металевий сплав (алюміній), діаметр 60см",
+    "size": "OneSize",
+    "pricePerDay": 180.0,
+    "id": "96060516-f62c-4456-beaa-e6e7f552e506"
+  },
+  {
+    "name": "Чарівна паличка",
+    "description": "Дерево, ручна робота, зі світловим ефектом",
+    "size": "OneSize",
+    "pricePerDay": 90.0,
+    "id": "d7d7ec44-d4b0-446f-9513-39d5959db035"
+  },
+  {
+    "name": "Світловий меч (Синій)",
+    "description": "Зі звуком та світлом, ударостійкий",
+    "size": "OneSize",
+    "pricePerDay": 160.0,
+    "id": "65d28771-a4bb-42f9-aa6c-f285dd2f80be"
   }
 ]

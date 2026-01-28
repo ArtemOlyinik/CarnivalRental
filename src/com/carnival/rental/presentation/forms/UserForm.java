@@ -32,13 +32,14 @@ public class UserForm {
   public UserLoginDto login() {
     ConsoleColors.printHeader("ФОРМА ВХОДУ");
 
-    System.out.print("Введіть email: " + ConsoleColors.CYAN);
-    String email = scanner.nextLine();
+    // ЗМІНЕНО: Тепер питаємо Логін
+    System.out.print("Введіть логін: " + ConsoleColors.CYAN);
+    String username = scanner.nextLine();
 
     System.out.print(ConsoleColors.RESET + "Введіть пароль: " + ConsoleColors.CYAN);
     String password = scanner.nextLine();
     System.out.print(ConsoleColors.RESET);
 
-    return new UserLoginDto(email, password);
+    return new UserLoginDto(username, password);
   }
 }
