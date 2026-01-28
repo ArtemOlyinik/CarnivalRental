@@ -1,0 +1,422 @@
+[
+  {
+    "username": "deetta.waelchi",
+    "email": "judi.nader@gmail.com",
+    "password": "t4qeqk7z40ppq",
+    "role": "CLIENT",
+    "id": "6765f518-3798-48c0-bf59-0e82baea5808"
+  },
+  {
+    "username": "francesco.bednar",
+    "email": "sharon.ryan@hotmail.com",
+    "password": "j1ly85pp2ksbl9n",
+    "role": "ADMIN",
+    "id": "6cbb095c-004b-4169-a30b-87154654ed3c"
+  },
+  {
+    "username": "tawanda.little",
+    "email": "errol.kemmer@yahoo.com",
+    "password": "5t5dj94s335i4pf9",
+    "role": "CLIENT",
+    "id": "5aaf7efa-7610-4e89-88d7-ddc360b279ce"
+  },
+  {
+    "username": "willia.kunze",
+    "email": "guillermo.rutherford@gmail.com",
+    "password": "9jta0wf84",
+    "role": "ADMIN",
+    "id": "d6089f4c-8f4e-4ad2-9aff-4d822ac482fb"
+  },
+  {
+    "username": "simon.harris",
+    "email": "ginny.barrows@hotmail.com",
+    "password": "nuvgv79z6bx1r",
+    "role": "CLIENT",
+    "id": "9a71134e-a648-47cc-b300-aa1d3be39121"
+  },
+  {
+    "username": "горислав.гриневський",
+    "email": "кузьма.іванів@i.ua",
+    "password": "e38y5d1nu50wn",
+    "role": "CLIENT",
+    "id": "da17f831-3184-4c01-9e42-7081063c4f88"
+  },
+  {
+    "username": "доброслав.ломовий",
+    "email": "родіон.вередун@ex.ua",
+    "password": "jiv940boj",
+    "role": "ADMIN",
+    "id": "914cebe0-681a-4117-9638-013f9a8c24a2"
+  },
+  {
+    "username": "зореслав.гнатишин",
+    "email": "славута.лобачевськии@i.ua",
+    "password": "w33781u9m26v26",
+    "role": "CLIENT",
+    "id": "70eee046-d398-4448-b62f-2493ea96fca2"
+  },
+  {
+    "username": "ян.коров’як",
+    "email": "владислав.тарасюк@e-mail.ua",
+    "password": "21isf1yv59883",
+    "role": "ADMIN",
+    "id": "421910af-2415-4d96-8741-595075822490"
+  },
+  {
+    "username": "ярослав.гайовий",
+    "email": "олесь.павлів@ukr.net",
+    "password": "tszi22d5",
+    "role": "CLIENT",
+    "id": "2d84636c-94ca-4491-beaf-1175fcd0a153"
+  },
+  {
+    "username": "аврелій.ликович",
+    "email": "аркадіи.юхно@gmail.com",
+    "password": "i203l567d9k85",
+    "role": "CLIENT",
+    "id": "772078e3-d870-4b67-b294-1e72c322fe5e"
+  },
+  {
+    "username": "арсеній.вергун",
+    "email": "в’ячеслав.михаилюк@i.ua",
+    "password": "6ycdh6zob3573754",
+    "role": "ADMIN",
+    "id": "4c2e1cca-2d44-4812-85f7-fe90182839ca"
+  },
+  {
+    "username": "ізяслав.мамій",
+    "email": "ладислав.стоян@ukr.net",
+    "password": "80179q5r87apaj",
+    "role": "CLIENT",
+    "id": "a94c149b-ba0a-430a-b4ad-7e798d72face"
+  },
+  {
+    "username": "захар.сосюра",
+    "email": "будимир.лановии@i.ua",
+    "password": "83r4jp5fkh69",
+    "role": "ADMIN",
+    "id": "e152a3d4-815b-4b1b-a0c4-d42b9146497a"
+  },
+  {
+    "username": "охрім.червоній",
+    "email": "августин.прядун@ukr.net",
+    "password": "8gjmxv33",
+    "role": "CLIENT",
+    "id": "158bab98-9872-49d1-9206-a3ebb0fa5027"
+  },
+  {
+    "username": "лад.семещук",
+    "email": "пантелеимон.трясило@ex.ua",
+    "password": "o4l5ku476p",
+    "role": "CLIENT",
+    "id": "da6d9beb-0096-4fd2-8aad-188d73efb61f"
+  },
+  {
+    "username": "градимир.цушко",
+    "email": "потап.компанієць@ex.ua",
+    "password": "m25k1u45u9wtj2",
+    "role": "ADMIN",
+    "id": "ff661c7b-4cd5-4400-86e0-d9e9a5c5ad99"
+  },
+  {
+    "username": "велемир.шевченко",
+    "email": "устим.савицькии@gmail.com",
+    "password": "6t3870gf247qg",
+    "role": "CLIENT",
+    "id": "975006ec-9376-4426-b255-6116c96cbfdc"
+  },
+  {
+    "username": "олесь.петрів",
+    "email": "ярема.третяк@ex.ua",
+    "password": "32c69035s3k1x53",
+    "role": "ADMIN",
+    "id": "f404f84e-3306-43f6-be99-9c08a80e0b43"
+  },
+  {
+    "username": "василь.гайовий",
+    "email": "максим.гнатишин@ukr.net",
+    "password": "k20n23fg0e",
+    "role": "CLIENT",
+    "id": "9070c68f-e676-49ec-9ae2-2536457eeeab"
+  },
+  {
+    "username": "добромисл.зінкевич",
+    "email": "захар.москаль@e-mail.ua",
+    "password": "03q9gl023",
+    "role": "CLIENT",
+    "id": "2a731e56-7a55-45bb-a288-cc6a6fd0efcb"
+  },
+  {
+    "username": "будимир.бондаренко",
+    "email": "орест.гаидук@i.ua",
+    "password": "2jc2c6201jo7",
+    "role": "ADMIN",
+    "id": "00065f42-836a-400d-aec8-6dc54394cda2"
+  },
+  {
+    "username": "тур.коман",
+    "email": "далемир.могилевськии@meta.ua",
+    "password": "cka9a0gc",
+    "role": "CLIENT",
+    "id": "f66e3f22-a7de-4a4d-8157-7c37c506a92d"
+  },
+  {
+    "username": "ратибор.зінкевич",
+    "email": "захар.пригода@gmail.com",
+    "password": "fwafkhq99ri1",
+    "role": "ADMIN",
+    "id": "d7296a7a-4a83-457c-b749-3ae0a04d3798"
+  },
+  {
+    "username": "роман.гречко",
+    "email": "яровид.бачеи@e-mail.ua",
+    "password": "8x1m384t70ls178",
+    "role": "CLIENT",
+    "id": "0f19857d-032d-44db-9794-69edd45a4ca9"
+  },
+  {
+    "username": "георгій.шупик",
+    "email": "антоніи.ликович@ukr.net",
+    "password": "5tetiv2j4309u35",
+    "role": "CLIENT",
+    "id": "52ae43ba-f229-41fd-a821-a320dd81c8ef"
+  },
+  {
+    "username": "стефаній.мазайло",
+    "email": "яромир.дурдинець@i.ua",
+    "password": "bk26by3zs4930c8",
+    "role": "ADMIN",
+    "id": "ea232ef6-00b5-4c9c-b97f-2997eb224442"
+  },
+  {
+    "username": "златомир.латаний",
+    "email": "подолян.розпутніи@meta.ua",
+    "password": "r4o32lr936umm4",
+    "role": "CLIENT",
+    "id": "5b544dea-1df7-4483-a7c1-f1ea7f13ecbe"
+  },
+  {
+    "username": "антоній.сердюк",
+    "email": "петро.демків@gmail.com",
+    "password": "33d25af76j3",
+    "role": "ADMIN",
+    "id": "d8d15811-e9fd-495e-83e1-567314eea394"
+  },
+  {
+    "username": "всеволод.бурмило",
+    "email": "георгіи.зінкевич@ukr.net",
+    "password": "72ss9tsm01vl2",
+    "role": "CLIENT",
+    "id": "93eac065-1ac9-47a8-899d-5498a81e0618"
+  },
+  {
+    "username": "адріян.ліхно",
+    "email": "роксолан.галаєнко@meta.ua",
+    "password": "5q0pxp99k",
+    "role": "CLIENT",
+    "id": "896c1d68-07d3-4723-876b-a35d3e0e47c0"
+  },
+  {
+    "username": "руслан.гришко",
+    "email": "корнеліи.гречко@meta.ua",
+    "password": "9d1c786t9t77ai3p",
+    "role": "ADMIN",
+    "id": "f0c58752-666e-4fb9-8c7f-9a42f9963994"
+  },
+  {
+    "username": "щек.усич",
+    "email": "семибор.витребенько@gmail.com",
+    "password": "7l95vd71",
+    "role": "CLIENT",
+    "id": "7c3233c4-acf8-4b91-a472-0c569ffe4277"
+  },
+  {
+    "username": "корнило.васильківський",
+    "email": "звенислав.луцьків@meta.ua",
+    "password": "7289e645391x06",
+    "role": "ADMIN",
+    "id": "de7b31a9-af41-405b-8cf1-3d553e487bf8"
+  },
+  {
+    "username": "гнат.гойко",
+    "email": "всеволод.вергун@e-mail.ua",
+    "password": "fuy0xc524ro55o",
+    "role": "CLIENT",
+    "id": "918b32f1-cf34-42f3-b73c-07d56c111f9d"
+  },
+  {
+    "username": "радим.галаціон",
+    "email": "альберт.маковецькии@ex.ua",
+    "password": "v99ogky5y7",
+    "role": "CLIENT",
+    "id": "53f163c5-d729-449b-87aa-eae0a28494d7"
+  },
+  {
+    "username": "сологуб.зленко",
+    "email": "макар.свидригаило@ex.ua",
+    "password": "8p7hm514auo4p4",
+    "role": "ADMIN",
+    "id": "544d8bd9-11d8-4540-9876-c7ed8225af79"
+  },
+  {
+    "username": "пантелеймон.дурдинець",
+    "email": "адріян.ліхно@e-mail.ua",
+    "password": "f1bfykgvs",
+    "role": "CLIENT",
+    "id": "747663ed-e9b6-4774-8fa6-982d6bb4484a"
+  },
+  {
+    "username": "пантелеймон.миклухо",
+    "email": "ярема.корецькии@ex.ua",
+    "password": "6f72is22b",
+    "role": "ADMIN",
+    "id": "42244733-8db2-4dc8-9435-1d95fb6ba281"
+  },
+  {
+    "username": "тур.кандиба",
+    "email": "максим.ногачевськии@ukr.net",
+    "password": "w19it7z2u34",
+    "role": "CLIENT",
+    "id": "31c129ea-d99d-45a5-8dfd-47211674f506"
+  },
+  {
+    "username": "кий.гриневецький",
+    "email": "адріян.бондаренко@gmail.com",
+    "password": "28d0q98f6m",
+    "role": "CLIENT",
+    "id": "becbe0ae-8940-460d-8458-dd5c4e1ccb08"
+  },
+  {
+    "username": "богдан.спотикач",
+    "email": "іван.ємець@i.ua",
+    "password": "id4co901m44v",
+    "role": "ADMIN",
+    "id": "e32061cf-cbd2-4547-b253-5f9060feedb5"
+  },
+  {
+    "username": "борис.сірко",
+    "email": "мар’ян.сторчак@meta.ua",
+    "password": "yrg3l66eq04n059",
+    "role": "CLIENT",
+    "id": "8fa28e67-3fc7-4897-90e3-3486c03dd095"
+  },
+  {
+    "username": "зеновій.боровський",
+    "email": "петро.глинськии@meta.ua",
+    "password": "x3w8bokll45o36",
+    "role": "ADMIN",
+    "id": "f1331e0a-e166-4c4a-8818-283698fe2f70"
+  },
+  {
+    "username": "будимир.балицький",
+    "email": "герасим.малкович@yandex.ua",
+    "password": "y943e6sj5",
+    "role": "CLIENT",
+    "id": "a2bf98a7-98b2-4d88-99fc-669ca6474928"
+  },
+  {
+    "username": "валерій.балакун",
+    "email": "гордіи.демчишин@yandex.ua",
+    "password": "pllsaxkn9",
+    "role": "CLIENT",
+    "id": "501f1f5c-68c3-4c61-9166-0489f4f211ba"
+  },
+  {
+    "username": "кузьма.спотикач",
+    "email": "лаврентіи.галаціон@gmail.com",
+    "password": "i9aw513353",
+    "role": "ADMIN",
+    "id": "2781ce89-2b55-4f8a-a944-d2148821bdd8"
+  },
+  {
+    "username": "омелян.мамій",
+    "email": "лаврентіи.маміи@ukr.net",
+    "password": "6j92un402f",
+    "role": "CLIENT",
+    "id": "af64bdc1-f141-42d4-8a79-54fa74c4804a"
+  },
+  {
+    "username": "ярема.дзюб’як",
+    "email": "сологуб.силецькии@ukr.net",
+    "password": "j34abvik7",
+    "role": "ADMIN",
+    "id": "bcbacdbe-7024-446f-b5f7-dd0916097e14"
+  },
+  {
+    "username": "звенигор.бабух",
+    "email": "братослав.петришин@ex.ua",
+    "password": "d631c0c61sdx",
+    "role": "CLIENT",
+    "id": "26d7eb97-396d-4229-a6bf-49e94e62425b"
+  },
+  {
+    "username": "арсен.шевченко",
+    "email": "мусіи.шудрик@ex.ua",
+    "password": "7jl8pgm35wg827c",
+    "role": "CLIENT",
+    "id": "e9bcc00c-0bd4-40ac-8410-070282863622"
+  },
+  {
+    "username": "юрій.брицький",
+    "email": "святополк.білич@e-mail.ua",
+    "password": "4q42t5h1un3si",
+    "role": "ADMIN",
+    "id": "67587a88-6d95-4e31-80a9-4d3685186e30"
+  },
+  {
+    "username": "хвалимир.андрухович",
+    "email": "захаріи.калач@e-mail.ua",
+    "password": "zemm456l88wfr",
+    "role": "CLIENT",
+    "id": "7d44c53e-b9cf-4882-89e8-cbe077d943b0"
+  },
+  {
+    "username": "божен.цимбалістий",
+    "email": "любомир.петрів@e-mail.ua",
+    "password": "a620ly41gh19f",
+    "role": "ADMIN",
+    "id": "770604dc-86b0-4cbd-91bd-0f050b8480a3"
+  },
+  {
+    "username": "братислав.яцишин",
+    "email": "натан.коломієць@ex.ua",
+    "password": "kc805h8k",
+    "role": "CLIENT",
+    "id": "d411b237-1edf-456c-8b4c-bb71ae5a1f1b"
+  },
+  {
+    "username": "маркіян.стоян",
+    "email": "тарас.євенко@meta.ua",
+    "password": "oymyngspb9",
+    "role": "CLIENT",
+    "id": "982e1fd6-50e5-47d2-8969-8ac63a88e593"
+  },
+  {
+    "username": "анатолій.шестак",
+    "email": "захаріи.стецьків@i.ua",
+    "password": "13332i107",
+    "role": "ADMIN",
+    "id": "ce4efd54-1bfe-48c7-abff-a0a3ceef3870"
+  },
+  {
+    "username": "братимир.приймак",
+    "email": "ратибор.романишин@i.ua",
+    "password": "gde9b6g4",
+    "role": "CLIENT",
+    "id": "fa7faace-7434-46b9-ac94-57184881f5f5"
+  },
+  {
+    "username": "омелян.зінкевич",
+    "email": "єреміи.верещук@e-mail.ua",
+    "password": "kj8f3b856277jak",
+    "role": "ADMIN",
+    "id": "181230ed-1e35-4379-98f9-a7f36e3e9b59"
+  },
+  {
+    "username": "юрій.юрчишин",
+    "email": "корнеліи.данилко@gmail.com",
+    "password": "273752b3ri4",
+    "role": "CLIENT",
+    "id": "f6dc61e0-66f3-4026-8474-16475ae69900"
+  }
+]

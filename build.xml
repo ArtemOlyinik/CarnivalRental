@@ -2,9 +2,17 @@
   <property name="src.dir" value="src"/>
   <property name="build.dir" value="out/production/CarnivalRental"/>
   <property name="dist.dir" value="dist"/>
+  <property name="lib.dir" value="lib"/>
+
+  <path id="lib.path">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
 
   <target name="clean">
     <delete dir="${dist.dir}"/>
+    <delete dir="${build.dir}"/>
   </target>
 
   <target name="compile">
@@ -12,6 +20,7 @@
     <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
       <compilerarg value="--release"/>
       <compilerarg value="21"/>
+      <classpath refid="lib.path"/>
     </javac>
   </target>
 
@@ -25,6 +34,12 @@
   </target>
 
   <target name="run" depends="compile">
-    <java classname="com.carnival.rental.presentation.Main" classpath="${build.dir}" fork="true"/>
+    <echo message="Запускаємо сервіс прокату карнавальних костюмів..."/>
+    <java classname="com.carnival.rental.presentation.Main" fork="true">
+      <classpath>
+        <path refid="lib.path"/>
+        <pathelement location="${build.dir}"/>
+      </classpath>
+    </java>
   </target>
 </project>
