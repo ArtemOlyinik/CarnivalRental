@@ -1,72 +1,40 @@
 package com.carnival.rental.presentation;
 
-import com.carnival.rental.entity.ProductType;
+import com.carnival.rental.dto.ProductDto;
+import com.carnival.rental.dto.UserLoginDto;
+import com.carnival.rental.dto.UserRegisterDto;
 import com.carnival.rental.entity.User;
+import com.carnival.rental.service.AuthService;
 import com.carnival.rental.service.ProductTypeService;
-import com.carnival.rental.service.UserService;
-import java.util.List;
-import java.util.Locale;
-import java.util.UUID;
-import net.datafaker.Faker;
 
 public class Main {
 
   public static void main(String[] args) {
-    System.out.println("========== ТЕСТУВАННЯ БІЗНЕС-ЛОГІКИ (SERVICE LAYER) ==========");
+    System.out.println(">>> ТЕСТУВАННЯ ЕТАПУ 4 (Auth & DTO) <<<");
 
-    // 1. Ініціалізація сервісів
-    UserService userService = new UserService();
+    AuthService authService = new AuthService();
     ProductTypeService productService = new ProductTypeService();
-    Faker faker = new Faker(new Locale("uk"));
 
-    // --- БЛОК 1: КОРИСТУВАЧІ ---
-    System.out.println("\n>>> 1. СТВОРЕННЯ КОРИСТУВАЧА (Create)");
-    String newLogin = faker.name().username();
-    userService.createUser(newLogin, "test.email@example.com", "12345", "CLIENT");
+    try {
+      // 1. Тест Реєстрації (має прийти "лист" в консоль)
+      System.out.println("\n--- 1. РЕЄСТРАЦІЯ ---");
+      UserRegisterDto regDto = new UserRegisterDto("novachok", "new.user@gmail.com",
+          "securePass123");
+      authService.register(regDto);
 
-    // Знаходимо його, щоб отримати ID
-    User createdUser = userService.searchUsers(newLogin).get(0);
-    UUID userId = createdUser.getId();
+      // 2. Тест Входу
+      System.out.println("\n--- 2. ВХІД (Login) ---");
+      UserLoginDto loginDto = new UserLoginDto("new.user@gmail.com", "securePass123");
+      User loggedUser = authService.login(loginDto);
+      System.out.println("Поточний користувач: " + loggedUser.getRole());
 
-    System.out.println(">>> 2. РЕДАГУВАННЯ (Update)");
-    // Змінюємо роль на ADMIN
-    userService.updateUser(userId, "new.email@example.com", "ADMIN");
+      // 3. Тест Товарів через DTO
+      System.out.println("\n--- 3. СТВОРЕННЯ ТОВАРУ ЧЕРЕЗ DTO ---");
+      ProductDto prodDto = new ProductDto("Маска Бетмена", "Пластикова маска", "Universal", 150.0);
+      productService.createProduct(prodDto);
 
-    System.out.println(">>> 3. ПОШУК (Search)");
-    List<User> searchResult = userService.searchUsers(newLogin);
-    searchResult.forEach(u -> System.out.println("Знайдено: " + u));
-
-    // --- БЛОК 2: ТОВАРИ ---
-    System.out.println("\n>>> 4. СТВОРЕННЯ ТОВАРІВ (Create Product)");
-    // Генеруємо 3 випадкові костюми
-    for (int i = 0; i < 3; i++) {
-      String costumeName = "Костюм " + faker.superhero().name();
-      productService.createProduct(
-          costumeName,
-          "Розмір " + faker.options().option("S", "M", "L"),
-          "M",
-          faker.number().numberBetween(100, 1000)
-      );
+    } catch (Exception e) {
+      System.out.println("ПОМИЛКА: " + e.getMessage());
     }
-
-    System.out.println(">>> 5. ОТРИМАННЯ ВСІХ ТОВАРІВ (Read All)");
-    List<ProductType> allProducts = productService.getAllProducts();
-    System.out.println("Всього товарів у базі: " + allProducts.size());
-
-    if (!allProducts.isEmpty()) {
-      ProductType firstProduct = allProducts.get(0);
-      System.out.println("Приклад товару: " + firstProduct);
-
-      System.out.println(">>> 6. ОНОВЛЕННЯ ЦІНИ (Update)");
-      productService.updateProduct(firstProduct.getId(), firstProduct.getName(),
-          "Опис змінено адміністратором", 9999.0);
-
-      System.out.println(">>> 7. ВИДАЛЕННЯ (Delete)");
-      // Видаляємо останній доданий товар для тесту
-      ProductType lastProduct = allProducts.get(allProducts.size() - 1);
-      productService.deleteProduct(lastProduct.getId());
-    }
-
-    System.out.println("\n========== ТЕСТУВАННЯ ЗАВЕРШЕНО ==========");
   }
 }

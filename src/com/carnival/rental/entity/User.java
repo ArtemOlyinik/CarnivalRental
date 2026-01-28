@@ -8,7 +8,6 @@ public class User extends BaseEntity {
   private String role;
 
   public User(String username, String email, String password, String role) {
-    // Валідація (та сама, що була)
     if (username == null || username.isBlank()) {
       throw new IllegalArgumentException("Username cannot be empty");
     }
@@ -25,7 +24,6 @@ public class User extends BaseEntity {
     this.role = role;
   }
 
-  // Геттери
   public String getUsername() {
     return username;
   }
@@ -38,7 +36,12 @@ public class User extends BaseEntity {
     return role;
   }
 
-  //СЕТТЕРИ
+  // --- ДОДАНО ГЕТТЕР ДЛЯ ПАРОЛЯ ---
+  public String getPassword() {
+    return password;
+  }
+  // --------------------------------
+
   public void setEmail(String email) {
     if (email == null || !email.contains("@")) {
       throw new IllegalArgumentException("Invalid email format");
@@ -52,7 +55,6 @@ public class User extends BaseEntity {
     }
     this.role = role;
   }
-  // ----------------------------------
 
   @Override
   public String toString() {

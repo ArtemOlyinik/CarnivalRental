@@ -425,5 +425,12 @@
     "password": "12345",
     "role": "ADMIN",
     "id": "f4669f98-ec19-45d7-a895-13a453a89f4a"
+  },
+  {
+    "username": "novachok",
+    "email": "new.user@gmail.com",
+    "password": "securePass123",
+    "role": "CLIENT",
+    "id": "1a81f78d-2103-49f3-9bbf-233bbe3bc78e"
   }
 ]

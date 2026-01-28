@@ -1,5 +1,6 @@
 package com.carnival.rental.service;
 
+import com.carnival.rental.dto.ProductDto;
 import com.carnival.rental.entity.ProductType;
 import com.carnival.rental.repository.ProductTypeRepository;
 import java.util.List;
@@ -15,31 +16,28 @@ public class ProductTypeService {
     this.repository = new ProductTypeRepository();
   }
 
-  // 1. CREATE
-  public void createProduct(String name, String description, String size, double price) {
-    ProductType product = new ProductType(name, description, size, price);
+  public void createProduct(ProductDto dto) {
+    ProductType product = new ProductType(dto.name(), dto.description(), dto.size(), dto.price());
     repository.save(product);
-    System.out.println("SERVICE: Товар створено -> " + name);
+    System.out.println("SERVICE: Товар створено -> " + dto.name());
   }
 
-  // 2. READ ALL
   public List<ProductType> getAllProducts() {
     return repository.findAll();
   }
 
-  // 3. READ ONE
   public Optional<ProductType> getProductById(UUID id) {
     return repository.findById(id);
   }
 
-  // 4. UPDATE
-  public void updateProduct(UUID id, String newName, String newDesc, double newPrice) {
+  public void updateProduct(UUID id, ProductDto dto) {
     Optional<ProductType> productOpt = repository.findById(id);
     if (productOpt.isPresent()) {
       ProductType product = productOpt.get();
-      product.setName(newName);
-      product.setDescription(newDesc);
-      product.setPricePerDay(newPrice);
+      product.setName(dto.name());
+      product.setDescription(dto.description());
+      product.setSize(dto.size());
+      product.setPricePerDay(dto.price());
 
       repository.save(product);
       System.out.println("SERVICE: Товар оновлено.");
@@ -48,18 +46,15 @@ public class ProductTypeService {
     }
   }
 
-  // 5. DELETE
   public void deleteProduct(UUID id) {
     repository.delete(id);
     System.out.println("SERVICE: Товар видалено.");
   }
 
-  // 6. SEARCH (Пошук за назвою або описом)
   public List<ProductType> searchProducts(String query) {
     if (query == null || query.isBlank()) {
       return getAllProducts();
     }
-
     String lowerQuery = query.toLowerCase();
     return repository.findAll().stream()
         .filter(p -> p.getName().toLowerCase().contains(lowerQuery) ||

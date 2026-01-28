@@ -12,5 +12,12 @@
     "size": "M",
     "pricePerDay": 9999.0,
     "id": "0ba18677-8e40-4b10-b932-36b325253c49"
+  },
+  {
+    "name": "Маска Бетмена",
+    "description": "Пластикова маска",
+    "size": "Universal",
+    "pricePerDay": 150.0,
+    "id": "aa8575d1-f55a-4bf6-9758-1b5f4cfc5c86"
   }
 ]
