@@ -432,5 +432,12 @@
     "password": "securePass123",
     "role": "CLIENT",
     "id": "1a81f78d-2103-49f3-9bbf-233bbe3bc78e"
+  },
+  {
+    "username": "artem",
+    "email": "artem@artem.com",
+    "password": "123456",
+    "role": "ADMIN",
+    "id": "e87c69db-7901-47bb-9f6b-5b8069e28380"
   }
 ]

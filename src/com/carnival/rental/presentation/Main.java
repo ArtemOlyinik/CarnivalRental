@@ -1,40 +1,49 @@
 package com.carnival.rental.presentation;
 
-import com.carnival.rental.dto.ProductDto;
-import com.carnival.rental.dto.UserLoginDto;
-import com.carnival.rental.dto.UserRegisterDto;
 import com.carnival.rental.entity.User;
-import com.carnival.rental.service.AuthService;
-import com.carnival.rental.service.ProductTypeService;
+import com.carnival.rental.presentation.pages.AuthView;
+import com.carnival.rental.presentation.pages.ProductView;
+import com.carnival.rental.presentation.util.ConsoleColors;
+import java.util.Scanner;
 
 public class Main {
 
   public static void main(String[] args) {
-    System.out.println(">>> ТЕСТУВАННЯ ЕТАПУ 4 (Auth & DTO) <<<");
+    // Єдиний сканер на всю програму (щоб не закривати System.in)
+    Scanner scanner = new Scanner(System.in);
 
-    AuthService authService = new AuthService();
-    ProductTypeService productService = new ProductTypeService();
+    // 1. Етап авторизації
+    AuthView authView = new AuthView(scanner);
+    User currentUser = authView.showLoginMenu();
 
-    try {
-      // 1. Тест Реєстрації (має прийти "лист" в консоль)
-      System.out.println("\n--- 1. РЕЄСТРАЦІЯ ---");
-      UserRegisterDto regDto = new UserRegisterDto("novachok", "new.user@gmail.com",
-          "securePass123");
-      authService.register(regDto);
+    // 2. Головне меню програми
+    ProductView productView = new ProductView(scanner);
 
-      // 2. Тест Входу
-      System.out.println("\n--- 2. ВХІД (Login) ---");
-      UserLoginDto loginDto = new UserLoginDto("new.user@gmail.com", "securePass123");
-      User loggedUser = authService.login(loginDto);
-      System.out.println("Поточний користувач: " + loggedUser.getRole());
+    boolean running = true;
+    while (running) {
+      ConsoleColors.printHeader("ГОЛОВНЕ МЕНЮ (" + currentUser.getUsername() + ")");
+      System.out.println("1. Каталог костюмів");
+      System.out.println("2. Мій профіль (Інфо)");
+      System.out.println("0. Вихід");
+      System.out.print(ConsoleColors.YELLOW + "Ваш вибір: " + ConsoleColors.RESET);
 
-      // 3. Тест Товарів через DTO
-      System.out.println("\n--- 3. СТВОРЕННЯ ТОВАРУ ЧЕРЕЗ DTO ---");
-      ProductDto prodDto = new ProductDto("Маска Бетмена", "Пластикова маска", "Universal", 150.0);
-      productService.createProduct(prodDto);
+      String choice = scanner.nextLine();
 
-    } catch (Exception e) {
-      System.out.println("ПОМИЛКА: " + e.getMessage());
+      switch (choice) {
+        case "1" -> productView.showCatalog(currentUser);
+        case "2" -> {
+          System.out.println("Ваш ID: " + currentUser.getId());
+          System.out.println("Email: " + currentUser.getEmail());
+          System.out.println("Роль: " + currentUser.getRole());
+          System.out.println("\nНатисніть Enter...");
+          scanner.nextLine();
+        }
+        case "0" -> {
+          System.out.println("До побачення!");
+          running = false;
+        }
+        default -> ConsoleColors.printError("Невірний вибір.");
+      }
     }
   }
 }
