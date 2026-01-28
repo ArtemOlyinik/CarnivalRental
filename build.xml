@@ -1,0 +1,30 @@
+<project name="CarnivalRental" default="compile" basedir=".">
+  <property name="src.dir" value="src"/>
+  <property name="build.dir" value="out/production/CarnivalRental"/>
+  <property name="dist.dir" value="dist"/>
+
+  <target name="clean">
+    <delete dir="${dist.dir}"/>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${build.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+      <compilerarg value="--release"/>
+      <compilerarg value="21"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <mkdir dir="${dist.dir}"/>
+    <jar destfile="${dist.dir}/CarnivalRental.jar" basedir="${build.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="com.carnival.rental.presentation.Main"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="com.carnival.rental.presentation.Main" classpath="${build.dir}" fork="true"/>
+  </target>
+</project>
